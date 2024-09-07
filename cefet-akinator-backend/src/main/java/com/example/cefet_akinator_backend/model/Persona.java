@@ -12,6 +12,7 @@ import java.util.List;
 @Table(name = "personas")
 @Data
 public class Persona {
+    String name;
     String imgUrl;
     List<Boolean> characteristicsList;
 }

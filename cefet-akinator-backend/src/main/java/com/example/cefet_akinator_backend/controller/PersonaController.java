@@ -39,6 +39,7 @@ public class PersonaController {
     public ResponseEntity<Persona> updatePersona(@PathVariable Long id, @RequestBody Persona persona){
         return personaRepository.findById(id)
                 .map(recordFound -> {
+                    recordFound.setName(persona.getName());
                     recordFound.setImgUrl(persona.getImgUrl());
                     recordFound.setCharacteristicsList(persona.getCharacteristicsList());
                     Persona personaUpdated = personaRepository.save(recordFound);
