@@ -1,0 +1,48 @@
+<div class="container">
+  <h1>Criar Nova Pessoa</h1>
+  <form class="create-form">
+    <label for="name">Nome:</label>
+    <input type="text" id="name" name="name" placeholder="Nome da pessoa" />
+
+    <label for="image-url">URL da Imagem:</label>
+    <input type="text" id="image-url" name="image-url" placeholder="URL da imagem" />
+
+    <fieldset>
+      <legend>Características:</legend>
+      
+      <!-- Pergunta: É homem? -->
+      <div class="radio-group">
+        <span>É homem?</span>
+        <div class="radio-buttons-container">
+          <label>
+            <input type="radio" name="is-male" value="yes" />
+            <span>Sim</span>
+          </label>
+          <label>
+            <input type="radio" name="is-male" value="no" />
+            <span>Não</span>
+          </label>
+        </div>
+      </div>
+      
+      <!-- Pergunta: É mulher? -->
+      <div class="radio-group">
+        <span>É mulher?</span>
+        <div class="radio-buttons-container">
+          <label>
+            <input type="radio" name="is-female" value="yes" />
+            <span>Sim</span>
+          </label>
+          <label>
+            <input type="radio" name="is-female" value="no" />
+            <span>Não</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Adicione mais perguntas conforme necessário -->
+    </fieldset>
+
+    <button type="submit" class="save-btn">Salvar</button>
+  </form>
+</div>
