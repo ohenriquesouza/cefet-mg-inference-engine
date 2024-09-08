@@ -26,15 +26,14 @@ public class PersonaService {
         Persona persona1 = (Persona) context.getBean(Persona.class);
         persona1.setName("Alberto Pena Lara");
         persona1.setImgUrl("http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4782120U0");
-        persona1.setCharacteristicsList(Arrays.asList(true, true, false,
-                true, false, true,false, true, false,false, false, true,
-                false, false, false,false, false, false,false, false, false,
-                false, false, false,false, false, false,false, false, false,
-                false, false, false,false, false, false,false, false, false,
-                false, false, true, true, false, false,false, true, false,
-                false, true, false, false, false, false,false, false, false,
-                false, false, false, false, false, false,
-                false, false, true, false));
+        persona1.setCharacteristicsList(Arrays.asList(
+                true, true, false, true, false, true, false, true, false, false,
+                false, true, false, false, false, false, false, true, false, false,
+                false, false, false, false, false, false, false, false, false, false,
+                false, false, false, false, false, false, false, false, false, false,
+                false, true, true, false, false, false, true, false, false, true,
+                false, false, false, false, false, false, false, false, false, false,
+                false, false, false, false, false, true, false));
 
         Persona persona2 = (Persona) context.getBean(Persona.class);
         persona2.setName("ALISSON MARQUES DA SILVA");
@@ -153,7 +152,7 @@ public class PersonaService {
         Persona persona12 = (Persona) context.getBean(Persona.class);
         persona12.setName("THABATTA MOREIRA ALVES DE ARAÚJO");
         persona12.setImgUrl("http://servicosweb.cnpq.br/wspessoa/servletrecuperafoto?tipo=1&id=K4358266T5");
-        persona12.setCharacteristicsList(Arrays.asList(true, false, false, true,
+        persona12.setCharacteristicsList(Arrays.asList(false, true, false, true,
                 false, true, false, true, true, false, true, true, false, false, false, true,
                 false, true, true, false, false, true, false, true, false, false, false, false,
                 false, false, false, false, false, false, true, false, false, true, false, false,

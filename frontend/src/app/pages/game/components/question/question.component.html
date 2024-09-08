@@ -1,20 +1,16 @@
 <div class="question-container">
+  @if (correctPersona == null) {
     <div class="question-box">
       <h2>{{ currentQuestion }}</h2>
     </div>
     
     <div class="button-container">
-      <button class="btn" (click)="onAnswer(true)">Sim</button>
-      <button class="btn" (click)="onAnswer(false)">Não</button>
-    </div>
-
-    <div class="result-container">
-        @if (pessoas.length > 0) {
-            <h3>Pessoas encontradas:</h3>
-            @for (pessoa of pessoas; track pessoa) {
-                <app-persona [imageUrl]="pessoa.imageUrl" [name]="pessoa.name"></app-persona>
-            }
-        }
-    </div>
+        <button class="btn" (click)="answerQuestion(true)">Sim</button>
+        <button class="btn" (click)="answerQuestion(false)">Não</button>
+      </div>
+    }@else {
+      <app-persona [imageUrl]="correctPersona.imgUrl" [name]="correctPersona.name"></app-persona>
+      <button class="btn" (click)="restartGame()">Reiniciar</button>
+    }
   </div>
   
