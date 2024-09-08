@@ -53,6 +53,7 @@ export class QuestionComponent {
     if (this.filteredPersonas.length === 1) {
       this.correctPersona = this.filteredPersonas[0];
       console.log(`A pessoa é: ${this.filteredPersonas[0].name}`);
+      this.questionService.setEndGameImage();
     }
     else if (this.currentQuestionIndex < this.questions.length) {
       this.currentQuestion = this.questions[this.currentQuestionIndex];
@@ -69,9 +70,10 @@ export class QuestionComponent {
           return persona.characteristicsList[index] === answer
         }
       );
+      this.questionService.changeImage();
       console.log(this.filteredPersonas)
-        this.currentQuestionIndex++;
-        this.loadNextQuestion();
+      this.currentQuestionIndex++;
+      this.loadNextQuestion();
       } else {
         alert('Índice da pergunta fora do intervalo.');
       }
@@ -81,8 +83,9 @@ export class QuestionComponent {
   }
 
   restartGame(){
-    console.log(this.filteredPersonas)
-    console.log(this.currentQuestionIndex)
-    this.loadPersonas()
+    console.log(this.filteredPersonas);
+    console.log(this.currentQuestionIndex);
+    this.loadPersonas();
+    this.questionService.resetImage()
   }
 }

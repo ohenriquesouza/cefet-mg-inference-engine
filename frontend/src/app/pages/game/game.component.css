@@ -1,0 +1,9 @@
+.game-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.game-container>img{
+    width: 500px;
+}
