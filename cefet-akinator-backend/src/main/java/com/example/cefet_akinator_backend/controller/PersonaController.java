@@ -2,19 +2,23 @@ package com.example.cefet_akinator_backend.controller;
 
 import com.example.cefet_akinator_backend.model.Persona;
 import com.example.cefet_akinator_backend.repository.PersonaRepository;
+import com.example.cefet_akinator_backend.services.PersonaService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @RestController
-@RequestMapping("/api/produtos")
+@RequestMapping("/api/personas")
 public class PersonaController {
     private final PersonaRepository personaRepository;
+    private final PersonaService personaService;
 
-    public PersonaController(PersonaRepository personaRepository) {
+    public PersonaController(PersonaRepository personaRepository, PersonaService personaService) {
         this.personaRepository = personaRepository;
+        this.personaService = personaService;
     }
 
     @GetMapping
@@ -29,9 +33,16 @@ public class PersonaController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/popularBanco")
+    public ResponseEntity<String> runDBFullfilling() {
+        List<Persona> personaList = personaService.populaBanco();
+        personaRepository.saveAll(personaList);
+        return ResponseEntity.ok("Database fullfilled successfully");
+    }
+
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
-    public Persona createPersona(@RequestBody Persona persona){
+    public Persona createPersona(@RequestBody Persona persona) {
         return personaRepository.save(persona);
     }
 

@@ -1,0 +1,28 @@
+.person-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.person-item:hover {
+    background-color: #f0f0f0;
+}
+
+.person-item img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.person-name {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
